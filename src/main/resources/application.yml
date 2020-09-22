@@ -1,0 +1,15 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 10001
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: zhujuan
+  jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+      default-property-inclusion: NON_NULL
