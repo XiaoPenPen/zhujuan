@@ -1,5 +1,6 @@
 package com.game.zhujuan.common;
 
+import com.google.common.collect.ImmutableMap;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -34,6 +35,36 @@ public class Result {
 		return result;
 	}
 
+	public static Result error(Integer code, String msg) {
+		Result result = new Result();
+		result.setCode(code);
+		result.setMessage(msg);
+		return result;
+	}
+
+	public static Result error(ErrorCode e) {
+		Result result = new Result();
+		result.setCode(e.getCode());
+		result.setMessage(e.getMessage());
+		return result;
+	}
+
+	public static Result error(ErrorCode e, Object data) {
+		Result result = new Result();
+		result.setCode(e.getCode());
+		result.setMessage(e.getMessage());
+		result.setData(data);
+		return result;
+	}
+
+	public static Result list(Integer total, Object items) {
+		Result result = new Result();
+		result.setCode(ErrorCode.SUCCESS.getCode());
+		result.setMessage("SUCCESS");
+		result.setData(ImmutableMap.of("total",total, "items",items));
+
+		return result;
+	}
 
 
 	public Result(Integer code, String message, Object data) {

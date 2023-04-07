@@ -8,8 +8,12 @@ public enum ErrorCode {
 	DATA_NONE(-2),
 	@Error(msg = "成功")
 	SUCCESS(1),
-	@Error(msg = "失败")
-	FAILURE(0);
+	@Error(msg = "失败") // 本地异常
+	FAILURE(0),
+	@Error(msg = "校验失败")
+	CHECK_ERROR(-1001),
+	@Error(msg = "缓存失效")
+	CACHE_ERROR(-1002);
 
 	// 成员变量
 	private int code;

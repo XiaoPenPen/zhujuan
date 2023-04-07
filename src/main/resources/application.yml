@@ -1,14 +1,19 @@
 # Tomcat
 server:
-  tomcat:
-    uri-encoding: UTF-8
   port: 10001
-  servlet:
-    context-path: /
 
 spring:
   application:
     name: zhujuan
+  datasource:
+    url: jdbc:mysql://192.168.145.72:3306/zhujuan?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: GMT+8

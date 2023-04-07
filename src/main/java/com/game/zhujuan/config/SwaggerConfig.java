@@ -18,15 +18,15 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.game.zhujuan"))
+                .apis(RequestHandlerSelectors.basePackage("com.how.identity"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("猪圈")
-                .description("猪圈接口api")
+                .title("USER")
+                .description("用户中心")
 //                .termsOfServiceUrl("/")
                 .version("1.0")
                 .build();
