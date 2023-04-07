@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.how.identity"))
+                .apis(RequestHandlerSelectors.basePackage("com.game"))
                 .paths(PathSelectors.any())
                 .build();
     }
